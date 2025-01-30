@@ -1,0 +1,12 @@
+.header-container {
+  background-image: url("./assets/restaurant-2.jpg");
+  height: 600px;
+  width: 100%;
+  background-size: cover; /* Ensure the background image covers the container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+.btn {
+  padding: 0.5rem 4rem;
+}
