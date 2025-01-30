@@ -1,12 +1,43 @@
 .header-container {
-  background-image: url("./assets/restaurant-2.jpg");
+  position: relative;
   height: 600px;
   width: 100%;
-  background-size: cover; /* Ensure the background image covers the container */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.blurred-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/restaurant-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  z-index: -1; /* Ensure it is behind other content */
+}
+
+.heading-block,
+.filter-container,
+.search-block {
+  position: relative;
+  z-index: 1; /* Ensure these elements are in front of the blurred background */
 }
 
 .btn {
   padding: 0.5rem 4rem;
+}
+
+.filter-container {
+  width: 54%;
+}
+
+.filter-text {
+  font-size: large;
+  font-weight: 600;
+}
+.bordered {
+  border-bottom: 2px solid whitesmoke;
 }
