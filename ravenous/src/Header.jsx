@@ -15,7 +15,7 @@ const Header = () => {
         <div className="heading-block">
           <BlurText
             text="Ravenous"
-            delay={300}
+            delay={200}
             animateBy="letters"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
