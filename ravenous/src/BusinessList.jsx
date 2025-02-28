@@ -1,34 +1,29 @@
+// import React from "react";
+import PropTypes from "prop-types";
 import Business from "./Business";
 
-const BusinessList = () => {
-  const businesses = [
-    {
-      name: "MarginOTTO",
-      address: "110 paddington Way",
-      city: "Bordertown",
-      category: "Italian",
-      rating: 4.5,
-      reviewCount: 90,
-      postcode: "NY 11010",
-    },
-    {
-      name: "restaurant 2",
-      address: "55 restaurants place",
-      category: "Sushi",
-      rating: 3,
-      reviewCount: 400,
-      postcode: "NY 11111",
-    },
-  ];
+const BusinessList = ({ businesses }) => {
   return (
-    <>
-      <div className="grid grid-cols-3 gap-4">
-        {businesses.map((biz) => (
-          <Business key={biz.name} {...biz} />
-        ))}
-      </div>
-    </>
+    <div className="grid grid-cols-3 gap-4">
+      {businesses.map((biz) => (
+        <Business key={biz.name} {...biz} />
+      ))}
+    </div>
   );
+};
+
+BusinessList.propTypes = {
+  businesses: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      reviewCount: PropTypes.number.isRequired,
+      postcode: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default BusinessList;
